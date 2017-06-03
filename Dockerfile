@@ -1,6 +1,4 @@
-FROM alpine:3.4
-
-MAINTAINER Sergii Nuzhdin <ipaq.lw@gmail.com@gmail.com>
+FROM alpine:3.6
 
 ENV KUBE_LATEST_VERSION=v1.6.4
 ENV HELM_VERSION=v2.4.2
@@ -16,4 +14,4 @@ RUN apk add --update ca-certificates \
  && apk del --purge deps \
  && rm /var/cache/apk/*
 
-ENTRYPOINT ["/bin/helm"]
+CMD ["/bin/sh"]
